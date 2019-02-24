@@ -1,0 +1,11 @@
+<div id = "results">
+  <div class = "user" *ngFor = "let u of users; let i = index" [ngClass] = "{'first': i == 0,
+    'second': i == 1, 'third': i == 2}">
+    <span class = "rank">{{i + 1 | ordinal}}</span>
+    <img src = "{{u.image}}">
+    <div id = "info">
+      <span>{{u.name}}</span> <br/>
+      <span>Score: {{u.score}}</span>
+    </div>
+  </div>
+</div>

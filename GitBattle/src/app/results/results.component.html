@@ -1,0 +1,28 @@
+<div id = "results" *ngIf = "player1 != undefined && player2 != undefined">
+  <div id = "playerone">
+    <img src = "{{player1.image}}" alt = "Player One"><br/>
+    <span class = "info">{{player1.name}}</span><br/>
+    <span class = "info" [ngClass] = "{'winner': score1 > score2, 'loser': score1 < score2,
+      'tie': score1 == score2}">Score: {{score1}}</span>
+  </div>
+
+  <div id = "playertwo">
+    <img src = "{{player2.image}}" alt = "Player Two"><br/>
+    <span class = "info">{{player2.name}}</span><br/>
+    <span class = "info" [ngClass] = "{'winner': score2 > score1, 'loser': score2 < score1,
+      'tie': score2 == score1}">Score: {{score2}}</span>
+  </div>
+
+  <div id = "score">
+    <h2 *ngIf = "score1 > score2">Player 1 wins! </h2>
+    <h2 *ngIf = "score1 < score2">Player 2 wins! </h2>
+    <h2 *ngIf = "score1 == score2">It's a tie! </h2>
+  </div>
+
+  <button (click) = "reset()" class = "btn btn-info btn-block">Reset</button>
+</div>
+
+<div id = "nope" *ngIf = "player1 == undefined || player2 == undefined">
+  <h3>Results are not available. Did you forget to submit the users' information on the main page?</h3>
+  <img src = "https://derpicdn.net/img/2014/1/18/527524/medium.png">
+</div>

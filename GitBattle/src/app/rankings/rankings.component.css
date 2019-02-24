@@ -1,0 +1,31 @@
+#results {
+    width: 1000px;
+    margin: auto;
+}
+.user {
+    background-color: white;
+    margin: 20px;
+    padding: 25px;
+}
+.user img {
+    width: 250px;
+    display: inline-block;
+}
+.user #info {
+    margin-left: 100px;
+    font-size: 36px;
+    display: inline-block;
+}
+.rank {
+    font-size: 36px;
+    margin-right: 50px;
+}
+.first {
+    background-color: gold;
+}
+.second {
+    background-color: silver;
+}
+.third {
+    background-color: rgb(205, 127, 50);
+}

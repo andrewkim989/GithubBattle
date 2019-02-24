@@ -1,0 +1,35 @@
+<div id = "searchusers">
+  <div id = "playerone">
+    <h3>Player 1</h3>
+    <span class = "error" *ngIf = "error1">User not found. Please type in another name. </span><br/>
+    <form (submit) = "findPlayerOne()" #oneData = "ngForm" *ngIf = "!found1">
+      <input type = "text" name = "playerone" [(ngModel)] = "playerOne.name" #playerone = "ngModel"
+      ngModel required size = "50" placeholder = "Enter Github username"/><br/><br/>
+      <input type = "submit" value = "Find User" 
+      class = "btn btn-primary btn-block" [disabled] = "oneData.form.invalid"/>
+    </form>
+
+    <div id = "oneinfo" *ngIf = "found1">
+      <img src = "{{data1.avatar_url}}" alt = "Player One"><br/>
+      <span class = "info">{{data1.login}}</span>
+    </div>
+  </div>
+
+  <div id = "versus">vs.</div>
+
+  <div id = "playertwo">
+    <h3>Player 2</h3>
+    <span class = "error" *ngIf = "error2">Cannot find user. Please type in another name. </span><br/>
+    <form (submit) = "findPlayerTwo()" #twoData = "ngForm" *ngIf = "!found2">
+      <input type = "text" name = "playertwo" [(ngModel)] = "playerTwo.name" #playertwo = "ngModel"
+      ngModel required size = "50" placeholder = "Enter Github username"/><br/><br/>
+      <input type = "submit" value = "Find User" 
+      class = "btn btn-primary btn-block" [disabled] = "twoData.form.invalid"/>
+    </form>
+    <div id = "twoinfo" *ngIf = "found2">
+      <img src = "{{data2.avatar_url}}" alt = "Player Two"><br/>
+      <span class = "info">{{data2.login}}</span>
+    </div>
+  </div>
+  <button *ngIf = "found1 && found2" class = "btn btn-danger btn-lg" (click) = "fight()">Fight!</button>
+</div>

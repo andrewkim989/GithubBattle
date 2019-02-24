@@ -1,0 +1,47 @@
+#results {
+    padding: 20px;
+    margin: auto;
+}
+img {
+    margin: auto;
+    width: 250px;
+}
+.info {
+    font-size: 36px;
+}
+#playerone, #playertwo {
+    display: inline-block;
+    vertical-align: top;
+    padding: 25px;
+    background-color: white;
+    width: 550px;
+    margin: 20px;
+    text-align: center;
+}
+#nope {
+    margin: 30px auto;
+    width: 700px;
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+}
+#nope img {
+    width: 300px;
+}
+.winner {
+    color: green;
+}
+.loser {
+    color: red;
+}
+.tie {
+    color: black;
+}
+#score {
+    text-align: center;
+}
+button {
+    width: 400px;
+    margin: 15px;
+    margin-left: 33%;
+}
